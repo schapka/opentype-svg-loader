@@ -1,0 +1,27 @@
+{
+  "name": "opentype-svg-loader",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schapka/opentype-svg-loader.git"
+  },
+  "keywords": [],
+  "author": "René Schapka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/schapka/opentype-svg-loader/issues"
+  },
+  "homepage": "https://github.com/schapka/opentype-svg-loader#readme",
+  "devDependencies": {
+    "jest": "^19.0.2"
+  },
+  "dependencies": {
+    "loader-utils": "^1.1.0",
+    "opentype.js": "^0.6.9"
+  }
+}
