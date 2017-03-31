@@ -19,7 +19,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ot.json$/,
+        test: /\.ot\.json$/,
         use: [
           {
             loader: 'opentype-svg-loader',
