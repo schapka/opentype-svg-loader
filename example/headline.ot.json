@@ -8,5 +8,8 @@
   "lineHeight": 1.1,
   "textAlign": "left",
   "decimalPlaces": 1,
-  "kerning": true
+  "kerning": true,
+  "attrs": {
+    "preserveAspectRatio": "xMaxYMax meet"
+  }
 }
