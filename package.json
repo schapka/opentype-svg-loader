@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "release": "np",
     "build-example": "webpack --config example/webpack.config.js"
   },
   "repository": {
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/schapka/opentype-svg-loader#readme",
   "devDependencies": {
     "jest": "^19.0.2",
+    "np": "^2.13.1",
     "webpack": "^2.3.2"
   },
   "dependencies": {
