@@ -4,8 +4,14 @@ A loader for webpack that lets you import TrueType and OpenType fonts converted 
 
 ## Install
 
+Using `yarn`
 ```bash
-# tbd
+yarn add -D opentype-svg-loader
+```
+
+Using `npm`
+```bash
+npm i -D opentype-svg-loader
 ```
 
 ## Usage
