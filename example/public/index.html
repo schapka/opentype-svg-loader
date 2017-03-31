@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>opentype-svg-loader example</title>
+
+        <style>
+            html {
+                height: 100%;
+            }
+
+            body {
+                position: relative;
+                margin: 0;
+                padding: 0;
+                min-height: 100%;
+            }
+
+            .svg-wrapper {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                height: 60vh;
+                background-color: lightslategrey;
+                transform: translateY(-50%);
+            }
+
+            .svg-wrapper svg {
+                position: absolute;
+                left: 10%;
+                top: 13%;
+                width: 80%;
+                height: 80%;
+                fill: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="svg-wrapper" id="mount"></div>
+        <script src="./dist/main.bundle.js"></script>
+    </body>
+</html>

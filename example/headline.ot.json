@@ -1,0 +1,12 @@
+{
+  "text": [
+    "{{greeting}},",
+    "{{name}}!"
+  ],
+  "font": "YellowtailRegular",
+  "size": 12,
+  "lineHeight": 1.1,
+  "textAlign": "left",
+  "decimalPlaces": 1,
+  "kerning": true
+}

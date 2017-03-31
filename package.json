@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build-example": "webpack --config example/webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,8 @@
   },
   "homepage": "https://github.com/schapka/opentype-svg-loader#readme",
   "devDependencies": {
-    "jest": "^19.0.2"
+    "jest": "^19.0.2",
+    "webpack": "^2.3.2"
   },
   "dependencies": {
     "loader-utils": "^1.1.0",
