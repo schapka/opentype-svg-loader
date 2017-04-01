@@ -12,7 +12,7 @@ module.exports = {
 
   resolveLoader: {
     alias: {
-      'opentype-svg-loader': path.resolve(__dirname, '..'),
+      'opentype-svg-loader': path.resolve(__dirname, '..', '..'),
     },
   },
 
@@ -27,7 +27,8 @@ module.exports = {
               fonts: {
                 YellowtailRegular: path.resolve(
                   __dirname,
-                  'fonts',
+                  '..',
+                  'assets',
                   'Yellowtail',
                   'Yellowtail-Regular.ttf'
                 ),

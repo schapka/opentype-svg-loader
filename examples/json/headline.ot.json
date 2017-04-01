@@ -7,7 +7,7 @@
   "size": 12,
   "lineHeight": 1.1,
   "textAlign": "left",
-  "decimalPlaces": 1,
+  "decimalPlaces": 2,
   "kerning": true,
   "attrs": {
     "preserveAspectRatio": "xMaxYMax meet"

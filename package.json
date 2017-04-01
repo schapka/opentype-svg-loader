@@ -8,7 +8,9 @@
     "prettier": "prettier --single-quote --trailing-comma es5 --write \"!(node_modules)/**/!(main.bundle).js\" \"*.js\"",
     "precommit": "npm run prettier && npm run test",
     "release": "np",
-    "build-example": "webpack --config example/webpack.config.js"
+    "build-examples": "npm run build-example:json && npm run build-example:mustache",
+    "build-example:json": "webpack --config examples/json/webpack.config.js",
+    "build-example:mustache": "webpack --config examples/mustache/webpack.config.js"
   },
   "repository": {
     "type": "git",
