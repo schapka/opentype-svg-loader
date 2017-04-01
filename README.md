@@ -16,7 +16,7 @@ npm i -D opentype-svg-loader
 
 ## Usage
 
-### Webpack configuration - `webpack.config.js`
+`webpack.config.js`
 
 ```javascript
 module: {
@@ -38,7 +38,7 @@ module: {
 }
 ```
 
-### Definition file - `*.ot.json`
+`headline.ot.json`
 
 ```json
 {
@@ -47,7 +47,7 @@ module: {
 }
 ```
 
-### Import and render
+`entry.js`
 
 ```javascript
 var headlineSVGString = require( './headline.ot.json' );
@@ -55,15 +55,26 @@ var wrapperEl = document.getElementById( 'mount' );
 wrapperEl.innerHTML = headlineSVGString;
 ```
 
-## Loader options
+## Input file
+
+The input file can either be a text file or a `JSON` file.
+
+In case of a text file its contents will be interpreted as template string (`options.text`).
+If the input file is a `JSON` file it can contain any of the available options. 
+
+## Options
+
+Options will be merged in following order:
+1. Loader Options
+2. Resource Query
+3. Input file (in case of a `JSON` input file)
 
 ### fonts
 Type: `Object`
 Default: `null`
 
-Object holding a collection of available fonts. Object keys are used as font reference in definition files. Object values represent absolute paths to font files.
+An object holding a collection of available fonts. Object keys are used as references. Object values represent absolute paths to font files.
 
-`webpack.config.js`
 ```javascript
 {
   options: {
@@ -80,53 +91,19 @@ Object holding a collection of available fonts. Object keys are used as font ref
 Type: `Object`
 Default: `{}`
 
-Data handed to definition file.
-
-`webpack.config.js`
-```javascript
-{
-  options: {
-    /* ... */
-    data: {
-      bar: 'foo'
-    }
-    /* ... */
-  }
-}
-```
-
-`*.ot.json`
-```json
-{
-  "text": "bar: {{bar}}"
-}
-```
-
-## Definition object
+A data object handed to mustache.
 
 ### text
 Type: `String | String[]`
 Default: `''`
 
-`*.ot.json`
-```json
-{
-  "text": "bar: {{bar}}"
-}
-```
-`*.ot.json` (multiline)
-```json
-{
-  "text": [
-    "bar:",
-    "{{bar}}"
-  ]
-}
-```
+A template string that will be processed by mustache. If the input file is not a `JSON` file its contents will be interpreted as the template string.
 
 ### font
 Type: `String`
 Default: `null`
+
+A reference to the font that should be used for rendering. Will fallback to the first entry of the font collection (`options.fonts`).
 
 ### size
 Type: `Number`
@@ -140,6 +117,8 @@ Default: `1.0`
 Type: `String`
 Default: `'left'`
 
+Possible Options: `'left'` `'center'` `'right'` 
+
 ### decimalPlaces
 Type: `Number`
 Default: `2`
@@ -152,7 +131,8 @@ Default: `true`
 Type: `Object`
 Default: `{}`
 
-`*.ot.json`
+Attributes that should be added to the `<svg>`-element
+
 ```json
 {
   "attrs": {
