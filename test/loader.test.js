@@ -2,7 +2,7 @@
 
 var loader = require('../lib/loader');
 
-describe('global', function() {
+describe('loader', function() {
   test('should export a function', function() {
     expect(typeof loader).toBe('function');
   });
@@ -10,4 +10,8 @@ describe('global', function() {
   test('should expect one argument', function() {
     expect(loader.length).toBe(1);
   });
+
+  /*
+   * TODO write additional tests
+   */
 });
