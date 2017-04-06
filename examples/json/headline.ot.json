@@ -11,5 +11,6 @@
   "kerning": true,
   "attrs": {
     "preserveAspectRatio": "xMaxYMax meet"
-  }
+  },
+  "sharedGlyphStore": true
 }
