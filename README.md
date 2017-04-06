@@ -55,6 +55,11 @@ var wrapperEl = document.getElementById( 'mount' );
 wrapperEl.innerHTML = headlineSVGString;
 ```
 
+## Examples
+
+* [JSON input file](https://github.com/schapka/opentype-svg-loader/tree/master/examples/json)
+* [Text/Mustache input file](https://github.com/schapka/opentype-svg-loader/tree/master/examples/mustache)
+
 ## Input file
 
 The input file can either be a text file or a `JSON` file.
