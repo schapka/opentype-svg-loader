@@ -25,12 +25,12 @@ module.exports = {
             loader: 'opentype-svg-loader',
             options: {
               fonts: {
-                YellowtailRegular: path.resolve(
+                RobotoBlack: path.resolve(
                   __dirname,
                   '..',
                   'assets',
-                  'Yellowtail',
-                  'Yellowtail-Regular.ttf'
+                  'Roboto',
+                  'Roboto-Black.ttf'
                 ),
               },
               data: {
