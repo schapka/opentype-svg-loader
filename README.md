@@ -142,5 +142,5 @@ Attributes that should be added to the `<svg>`-element
 ```
 
 ### sharedGlyphStore
-Type: `String`
-Default: `'default'`
+Type: `Boolean | String`
+Default: `true`
