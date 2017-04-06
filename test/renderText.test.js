@@ -47,4 +47,15 @@ describe('renderText', function() {
     var result = renderText(text, { content: { name: 'World' } });
     expect(result[0]).toBe('Hello World!');
   });
+
+  test('should support mustache template tags', function() {
+    var data = {
+      stooges: [{ name: 'Moe' }, { name: 'Larry' }, { name: 'Curly' }],
+    };
+    var text = '{{#stooges}}Name: {{name}}\n{{/stooges}}';
+    var result = renderText(text, data);
+    expect(result[0]).toBe('Name: Moe');
+    expect(result[1]).toBe('Name: Larry');
+    expect(result[2]).toBe('Name: Curly');
+  });
 });
