@@ -1,6 +1,6 @@
 {
   "name": "opentype-svg-loader",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A loader for webpack that lets you import TrueType and OpenType fonts converted to a SVG string.",
   "main": "index.js",
   "scripts": {
