@@ -16,7 +16,13 @@
     "type": "git",
     "url": "git+https://github.com/schapka/opentype-svg-loader.git"
   },
-  "keywords": [],
+  "keywords": [
+    "opentype",
+    "truetype",
+    "svg",
+    "webpack",
+    "loader"
+  ],
   "author": "René Schapka",
   "license": "MIT",
   "bugs": {
