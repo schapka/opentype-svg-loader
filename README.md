@@ -113,6 +113,10 @@ Default: `72`
 Type: `Number`
 Default: `1.0`
 
+### letterSpacing
+Type: `Number`
+Default: `0.0`
+
 ### textAlign
 Type: `String`
 Default: `'left'`

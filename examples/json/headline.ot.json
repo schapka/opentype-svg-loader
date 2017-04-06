@@ -6,6 +6,7 @@
   "font": "YellowtailRegular",
   "size": 12,
   "lineHeight": 1.1,
+  "letterSpacing": 0.0,
   "textAlign": "left",
   "decimalPlaces": 2,
   "kerning": true,
