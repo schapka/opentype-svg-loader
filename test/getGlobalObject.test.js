@@ -1,6 +1,7 @@
 'use strict';
 
 var getGlobalObject = require('../lib/getGlobalObject');
+var getNamespace = require('../lib/getNamespace');
 
 describe('getGlobalObject', function() {
   test('should be a function', function() {
@@ -31,6 +32,6 @@ describe('getGlobalObject', function() {
 
   test('should use correct namespace', function() {
     var result = getGlobalObject();
-    expect(result).toBe(global['opentype-svg-loader']);
+    expect(result).toBe(global[getNamespace()]);
   });
 });
