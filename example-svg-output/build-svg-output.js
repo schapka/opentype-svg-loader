@@ -21,13 +21,6 @@ var sharedOptions = merge(getDefaultOptions(), {
     'For science, music, sport, etc,',
   ],
   sharedGlyphStore: false,
-  attrs: {
-    test: true,
-    test2: false,
-    test3: 10,
-    test4: null,
-    test5: undefined,
-  },
 });
 
 glob(path.join(fontsDir, '*', '*.{ttf,otf}'), function(error, files) {
