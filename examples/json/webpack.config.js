@@ -28,7 +28,7 @@ module.exports = {
                 YellowtailRegular: path.resolve(
                   __dirname,
                   '..',
-                  'assets',
+                  '_shared-assets',
                   'Yellowtail',
                   'Yellowtail-Regular.ttf'
                 ),
