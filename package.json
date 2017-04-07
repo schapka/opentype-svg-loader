@@ -6,11 +6,12 @@
   "scripts": {
     "test": "jest",
     "prettier": "prettier --single-quote --trailing-comma es5 --write \"!(node_modules)/**/!(main.bundle).js\" \"*.js\"",
-    "precommit": "npm run prettier && npm run test",
+    "precommit": "npm run prettier && npm run test && npm run build-examples && npm run build-example-svg-output",
     "release": "np",
     "build-examples": "npm run build-example:json && npm run build-example:mustache",
     "build-example:json": "webpack --config examples/json/webpack.config.js",
-    "build-example:mustache": "webpack --config examples/mustache/webpack.config.js"
+    "build-example:mustache": "webpack --config examples/mustache/webpack.config.js",
+    "build-example-svg-output": "node example-svg-output/build-svg-output.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
   },
   "homepage": "https://github.com/schapka/opentype-svg-loader#readme",
   "devDependencies": {
+    "glob": "7.1.1",
     "husky": "^0.13.3",
     "jest": "^19.0.2",
     "np": "^2.13.1",
