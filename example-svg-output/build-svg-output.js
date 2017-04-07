@@ -20,14 +20,13 @@ var sharedOptions = merge(getDefaultOptions(), {
     'Their separate existence is a myth.',
     'For science, music, sport, etc,',
   ],
-  sharedGlyphStore: false,
 });
 
 glob(path.join(fontsDir, '*', '*.{ttf,otf}'), function(error, files) {
   if (error) {
     throw error;
   } else {
-    files.forEach(function(fontFile) {
+    files.forEach(function(fontFile, index) {
       var fontName = path
         .basename(fontFile)
         .replace(/\.(ttf|otf)/i, '')
@@ -42,10 +41,14 @@ glob(path.join(fontsDir, '*', '*.{ttf,otf}'), function(error, files) {
       var options = merge(sharedOptions, {
         fonts: fonts,
         font: fontName,
+        sharedGlyphStore: 's' + index,
       });
 
       renderSVG(options, function(error, svgString) {
-        if (!error && svgString) {
+        if (error) {
+          console.log(error);
+          process.exit(1);
+        } else {
           fs.writeFile(outputFile, svgString, 'utf8', function(error) {
             if (error) {
               console.log(error);
