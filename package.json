@@ -11,8 +11,9 @@
     "build-examples": "npm run build-example:json && npm run build-example:mustache",
     "build-example:json": "webpack --config examples/json/webpack.config.js",
     "build-example:mustache": "webpack --config examples/mustache/webpack.config.js",
-    "build-example-svg-output": "node example-svg-output/build-svg-output.js",
-    "watch-example:mustache": "webpack-dev-server --config examples/mustache/webpack.config.js --content-base examples/mustache/public --inline --quiet"
+    "watch-example:json": "npm run build-example:json -- -w",
+    "watch-example:mustache": "npm run build-example:mustache -- -w",
+    "build-example-svg-output": "node example-svg-output/build-svg-output.js"
   },
   "repository": {
     "type": "git",
@@ -37,8 +38,7 @@
     "jest": "^19.0.2",
     "np": "^2.13.1",
     "prettier": "^0.22.0",
-    "webpack": "^2.3.2",
-    "webpack-dev-server": "2.4.2"
+    "webpack": "^2.3.2"
   },
   "dependencies": {
     "loader-utils": "^1.1.0",
