@@ -9,7 +9,7 @@ var merge = require('webpack-merge');
 var getDefaultOptions = require('../lib/getDefaultOptions');
 var renderSVG = require('../lib/renderSVG');
 
-var fontsDir = path.resolve(__dirname, 'fonts');
+var fontsDir = path.resolve(__dirname, '..', 'fonts');
 var outputDir = path.resolve(__dirname, 'output');
 var sharedOptions = merge(getDefaultOptions(), {
   size: 24,

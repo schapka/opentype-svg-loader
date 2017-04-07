@@ -28,7 +28,8 @@ module.exports = {
                 RobotoBlack: path.resolve(
                   __dirname,
                   '..',
-                  '_shared-assets',
+                  '..',
+                  'fonts',
                   'Roboto',
                   'Roboto-Black.ttf'
                 ),
