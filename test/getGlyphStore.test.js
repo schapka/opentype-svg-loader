@@ -10,8 +10,4 @@ describe('getGlyphStore', function() {
   test('should expect three arguments', function() {
     expect(getGlyphStore.length).toBe(3);
   });
-
-  /*
-   * TODO write additional tests
-   */
 });

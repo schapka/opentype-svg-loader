@@ -25,13 +25,13 @@ module.exports = {
             loader: 'opentype-svg-loader',
             options: {
               fonts: {
-                RobotoBlack: path.resolve(
+                PermanentMarker: path.resolve(
                   __dirname,
                   '..',
                   '..',
                   'fonts',
-                  'Roboto',
-                  'Roboto-Black.ttf'
+                  'Permanent_Marker',
+                  'PermanentMarker.ttf'
                 ),
               },
               data: {

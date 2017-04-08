@@ -6,13 +6,9 @@
   "scripts": {
     "test": "jest",
     "prettier": "prettier --single-quote --trailing-comma es5 --write \"!(node_modules)/**/!(main.bundle).js\" \"*.js\"",
-    "precommit": "npm run prettier && npm run test && npm run build-examples && npm run build-example-svg-output",
+    "precommit": "npm run prettier && npm run test",
     "release": "np",
-    "build-examples": "npm run build-example:json && npm run build-example:mustache",
-    "build-example:json": "webpack --config examples/json/webpack.config.js",
-    "build-example:mustache": "webpack --config examples/mustache/webpack.config.js",
-    "watch-example:json": "npm run build-example:json -- -w",
-    "watch-example:mustache": "npm run build-example:mustache -- -w",
+    "build-examples": "node examples/build-examples.js",
     "build-example-svg-output": "node example-svg-output/build-svg-output.js"
   },
   "repository": {

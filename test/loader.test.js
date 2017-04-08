@@ -10,8 +10,4 @@ describe('loader', function() {
   test('should expect one argument', function() {
     expect(loader.length).toBe(1);
   });
-
-  /*
-   * TODO write additional tests
-   */
 });

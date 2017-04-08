@@ -10,8 +10,4 @@ describe('getOptions', function() {
   test('should expect one argument', function() {
     expect(getOptions.length).toBe(2);
   });
-
-  /*
-   * TODO write additional tests
-   */
 });
