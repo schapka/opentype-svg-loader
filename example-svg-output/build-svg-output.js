@@ -33,7 +33,8 @@ glob(path.join(fontsDir, '*', '*.{ttf,otf}'), function(error, files) {
         .replace(/[\s]+/i, '-')
         .toLowerCase();
 
-      var outputFile = path.resolve(outputDir, fontName + '.svg');
+      var outputFile = fontName + '.svg';
+      var outputFilePath = path.resolve(outputDir, outputFile);
 
       var fonts = {};
       fonts[fontName] = fontFile;
@@ -46,13 +47,15 @@ glob(path.join(fontsDir, '*', '*.{ttf,otf}'), function(error, files) {
 
       renderSVG(options, function(error, svgString) {
         if (error) {
-          console.log(error);
+          console.log('Failed creating: "' + outputFile + '"');
           process.exit(1);
         } else {
-          fs.writeFile(outputFile, svgString, 'utf8', function(error) {
+          fs.writeFile(outputFilePath, svgString, 'utf8', function(error) {
             if (error) {
-              console.log(error);
+              console.log('Failed creating: "' + outputFile + '"');
               process.exit(1);
+            } else {
+              console.log('Created: "' + outputFile + '"');
             }
           });
         }

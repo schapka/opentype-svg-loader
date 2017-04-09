@@ -13,10 +13,13 @@ var errorCount = 0;
 
 function handleCompilerComplete(error, stats) {
   if (error) {
+    console.log('Failed compiling: "' + this.name + '"');
     errorCount++;
   } else if (stats.hasErrors()) {
+    console.log('Failed compiling: "' + this.name + '"');
     errorCount++;
   } else {
+    console.log('Compiled: "' + this.name + '"');
     successCount++;
   }
   if (errorCount + successCount >= compilerCount) {
@@ -31,8 +34,9 @@ glob(path.join(examplesDir, '*', 'webpack.config.js'), function(error, files) {
     files.forEach(function(configFile) {
       compilerCount++;
       var config = require(configFile);
+      config.name = path.basename(path.dirname(configFile));
       var compiler = webpack(config);
-      compiler.run(handleCompilerComplete);
+      compiler.run(handleCompilerComplete.bind(compiler));
     });
   }
 });
