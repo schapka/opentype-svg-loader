@@ -4,6 +4,7 @@ var path = require('path');
 
 var glob = require('glob');
 var webpack = require('webpack');
+var merge = require('webpack-merge');
 
 var examplesDir = path.resolve(__dirname);
 
@@ -27,14 +28,25 @@ function handleCompilerComplete(error, stats) {
   }
 }
 
+var sharedConfig = {
+  resolveLoader: {
+    alias: {
+      'opentype-svg-loader': path.resolve(__dirname, '..'),
+    },
+  },
+};
+
 glob(path.join(examplesDir, '*', 'webpack.config.js'), function(error, files) {
   if (error) {
     throw error;
   } else {
     files.forEach(function(configFile) {
       compilerCount++;
-      var config = require(configFile);
-      config.name = path.basename(path.dirname(configFile));
+
+      var config = merge({}, require(configFile), sharedConfig, {
+        name: path.basename(path.dirname(configFile)),
+      });
+
       var compiler = webpack(config);
       compiler.run(handleCompilerComplete.bind(compiler));
     });

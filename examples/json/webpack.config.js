@@ -10,12 +10,6 @@ module.exports = {
     filename: '[name].bundle.js',
   },
 
-  resolveLoader: {
-    alias: {
-      'opentype-svg-loader': path.resolve(__dirname, '..', '..'),
-    },
-  },
-
   module: {
     rules: [
       {
