@@ -5,6 +5,11 @@ branches:
   only:
     - master
 
+cache:
+  directories:
+    - $HOME/.npm
+    - $HOME/.yarn-cache
+
 matrix:
   fast_finish: true
   include:
