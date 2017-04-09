@@ -4,12 +4,13 @@
   "description": "A loader for webpack that lets you import TrueType and OpenType fonts converted to a SVG string.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "prettier": "prettier --single-quote --trailing-comma es5 --write \"!(node_modules)/**/!(main.bundle).js\" \"*.js\"",
-    "precommit": "npm run prettier && npm run test",
     "release": "np",
     "build-examples": "node examples/build-examples.js",
-    "build-example-svg-output": "node example-svg-output/build-svg-output.js"
+    "build-example-svg-output": "node example-svg-output/build-svg-output.js",
+    "prettier": "prettier --single-quote --trailing-comma es5 --write \"!(node_modules)/**/!(main.bundle).js\" \"*.js\"",
+    "test": "jest",
+    "precommit": "npm run prettier && npm run test && npm run build-examples && npm run build-example-svg-output",
+    "travis:test": "npm run test && npm run build-examples && npm run build-example-svg-output"
   },
   "repository": {
     "type": "git",
