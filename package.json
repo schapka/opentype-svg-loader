@@ -23,6 +23,12 @@
     "webpack",
     "loader"
   ],
+  "files": [
+    "index.js",
+    "lib/",
+    "README.md",
+    "LICENSE"
+  ],
   "author": "René Schapka",
   "license": "MIT",
   "bugs": {

@@ -1,7 +1,0 @@
-/examples
-/example-svg-output
-/fonts
-/test
-.idea
-.travis.yml
-yarn.lock
