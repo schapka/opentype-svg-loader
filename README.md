@@ -1,3 +1,5 @@
+[![npm][npm]][npm-url]
+
 # OpenType-SVG-Loader
 
 A loader for webpack that lets you import TrueType and OpenType fonts converted to a SVG string.
