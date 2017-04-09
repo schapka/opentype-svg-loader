@@ -1,4 +1,5 @@
-[![npm][npm]][npm-url]
+[![npm version](https://badge.fury.io/js/opentype-svg-loader.svg)](https://badge.fury.io/js/opentype-svg-loader)
+[![Build Status](https://travis-ci.org/schapka/opentype-svg-loader.svg?branch=master)](https://travis-ci.org/schapka/opentype-svg-loader)
 
 # OpenType-SVG-Loader
 
