@@ -1,7 +1,7 @@
 'use strict';
 
-var getGlobalObject = require('../lib/getGlobalObject');
-var getNamespace = require('../lib/getNamespace');
+const getGlobalObject = require('../lib/getGlobalObject');
+const getNamespace = require('../lib/getNamespace');
 
 describe('getGlobalObject', function() {
   test('should be a function', function() {
@@ -13,25 +13,25 @@ describe('getGlobalObject', function() {
   });
 
   test('should return an object', function() {
-    var result = getGlobalObject();
+    const result = getGlobalObject();
     expect(typeof result).toBe('object');
   });
 
   test('should return existing global object if already defined', function() {
-    var globalObject = {};
+    const globalObject = {};
     global['opentype-svg-loader'] = globalObject;
-    var result = getGlobalObject();
+    const result = getGlobalObject();
     expect(result).toBe(globalObject);
   });
 
   test('should create new global object if not defined', function() {
-    delete global['opentype-svg-loader'];
-    var result = getGlobalObject();
+    global['opentype-svg-loader'] = undefined;
+    const result = getGlobalObject();
     expect(typeof result).toBe('object');
   });
 
   test('should use correct namespace', function() {
-    var result = getGlobalObject();
+    const result = getGlobalObject();
     expect(result).toBe(global[getNamespace()]);
   });
 });

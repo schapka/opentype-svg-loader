@@ -1,6 +1,6 @@
 'use strict';
 
-var loader = require('../lib/loader');
+const loader = require('../lib/loader');
 
 describe('loader', function() {
   test('should export a function', function() {

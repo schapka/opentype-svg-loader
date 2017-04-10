@@ -1,6 +1,6 @@
 'use strict';
 
-var getGlyphStore = require('../lib/getGlyphStore');
+const getGlyphStore = require('../lib/getGlyphStore');
 
 describe('getGlyphStore', function() {
   test('should export a function', function() {

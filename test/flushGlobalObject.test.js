@@ -1,8 +1,8 @@
 'use strict';
 
-var flushGlobalObject = require('../lib/flushGlobalObject');
-var getGlobalObject = require('../lib/getGlobalObject');
-var getNamespace = require('../lib/getNamespace');
+const flushGlobalObject = require('../lib/flushGlobalObject');
+const getGlobalObject = require('../lib/getGlobalObject');
+const getNamespace = require('../lib/getNamespace');
 
 describe('flushGlobalObject', function() {
   test('should be a function', function() {
@@ -14,18 +14,18 @@ describe('flushGlobalObject', function() {
   });
 
   test('should return an object', function() {
-    var result = flushGlobalObject();
+    const result = flushGlobalObject();
     expect(typeof result).toBe('object');
   });
 
   test('should always create new global object', function() {
-    var old = getGlobalObject();
-    var result = flushGlobalObject();
+    const old = getGlobalObject();
+    const result = flushGlobalObject();
     expect(old !== result).toBe(true);
   });
 
   test('should use correct namespace', function() {
-    var result = flushGlobalObject();
+    const result = flushGlobalObject();
     expect(result).toBe(global[getNamespace()]);
   });
 });

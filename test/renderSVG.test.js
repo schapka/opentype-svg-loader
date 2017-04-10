@@ -1,6 +1,6 @@
 'use strict';
 
-var renderSVG = require('../lib/renderSVG');
+const renderSVG = require('../lib/renderSVG');
 
 describe('renderSVG', function() {
   test('should export a function', function() {

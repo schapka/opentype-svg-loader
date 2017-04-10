@@ -1,6 +1,6 @@
 'use strict';
 
-var renderText = require('../lib/renderText');
+const renderText = require('../lib/renderText');
 
 describe('renderText', function() {
   test('should be a function', function() {
@@ -12,7 +12,7 @@ describe('renderText', function() {
   });
 
   test('should return an array of strings', function() {
-    var result = renderText('abc\ndef', {});
+    const result = renderText('abc\ndef', {});
     expect(Object.prototype.toString.call(result)).toBe('[object Array]');
     result.forEach(function(line) {
       expect(typeof line).toBe('string');
@@ -20,40 +20,40 @@ describe('renderText', function() {
   });
 
   test('should split string at line breaks', function() {
-    var result = renderText('abc\ndef\nghi', {});
+    const result = renderText('abc\ndef\nghi', {});
     expect(result.length).toBe(3);
   });
 
   test('should accept an array as text value', function() {
-    var text = ['abc', 'def', 'ghi'];
-    var result = renderText(text, {});
+    const text = ['abc', 'def', 'ghi'];
+    const result = renderText(text, {});
     expect(result.length).toBe(3);
   });
 
   test('should replace placeholders', function() {
-    var text = 'Hello {{name}}!';
-    var result = renderText(text, { name: 'World' });
+    const text = 'Hello {{name}}!';
+    const result = renderText(text, { name: 'World' });
     expect(result[0]).toBe('Hello World!');
   });
 
   test('should removed unused placeholders', function() {
-    var text = 'Hello {{name}}!';
-    var result = renderText(text, {});
+    const text = 'Hello {{name}}!';
+    const result = renderText(text, {});
     expect(result[0]).toBe('Hello !');
   });
 
   test('should support nested data', function() {
-    var text = 'Hello {{content.name}}!';
-    var result = renderText(text, { content: { name: 'World' } });
+    const text = 'Hello {{content.name}}!';
+    const result = renderText(text, { content: { name: 'World' } });
     expect(result[0]).toBe('Hello World!');
   });
 
   test('should support mustache template tags', function() {
-    var data = {
+    const data = {
       stooges: [{ name: 'Moe' }, { name: 'Larry' }, { name: 'Curly' }],
     };
-    var text = '{{#stooges}}Name: {{name}}\n{{/stooges}}';
-    var result = renderText(text, data);
+    const text = '{{#stooges}}Name: {{name}}\n{{/stooges}}';
+    const result = renderText(text, data);
     expect(result[0]).toBe('Name: Moe');
     expect(result[1]).toBe('Name: Larry');
     expect(result[2]).toBe('Name: Curly');

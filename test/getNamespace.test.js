@@ -1,6 +1,6 @@
 'use strict';
 
-var getNamespace = require('../lib/getNamespace');
+const getNamespace = require('../lib/getNamespace');
 
 describe('getNamespace', function() {
   test('should be a function', function() {
@@ -12,7 +12,7 @@ describe('getNamespace', function() {
   });
 
   test('should return "opentype-svg-loader"', function() {
-    var result = getNamespace();
+    const result = getNamespace();
     expect(result).toBe('opentype-svg-loader');
   });
 });

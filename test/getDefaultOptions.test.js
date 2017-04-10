@@ -1,6 +1,6 @@
 'use strict';
 
-var getDefaultOptions = require('../lib/getDefaultOptions');
+const getDefaultOptions = require('../lib/getDefaultOptions');
 
 describe('getDefaultOptions', function() {
   test('should be a function', function() {
@@ -12,12 +12,12 @@ describe('getDefaultOptions', function() {
   });
 
   test('should return an object', function() {
-    var result = getDefaultOptions();
+    const result = getDefaultOptions();
     expect(typeof result).toBe('object');
   });
 
   test('should have correct default values', function() {
-    var result = getDefaultOptions();
+    const result = getDefaultOptions();
     expect(result.fonts).toBe(null);
     expect(result.data).toEqual({});
     expect(result.text).toBe('');

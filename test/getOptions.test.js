@@ -1,6 +1,6 @@
 'use strict';
 
-var getOptions = require('../lib/getOptions');
+const getOptions = require('../lib/getOptions');
 
 describe('getOptions', function() {
   test('should export a function', function() {
