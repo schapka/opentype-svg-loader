@@ -1,17 +1,18 @@
 'use strict';
 
-var path = require('path');
-var fs = require('fs');
+const path = require('path');
+const fs = require('fs');
 
-var glob = require('glob');
-var merge = require('webpack-merge');
+const glob = require('glob');
+const merge = require('webpack-merge');
+const shortid = require('shortid');
 
-var getDefaultOptions = require('../lib/getDefaultOptions');
-var renderSVG = require('../lib/renderSVG');
+const getDefaultOptions = require('../lib/getDefaultOptions');
+const renderSVG = require('../lib/renderSVG');
 
-var fontsDir = path.resolve(__dirname, '..', 'fonts');
-var outputDir = path.resolve(__dirname, 'output');
-var sharedOptions = merge(getDefaultOptions(), {
+const fontsDir = path.resolve(__dirname, '..', 'fonts');
+const outputDir = path.resolve(__dirname, 'output');
+const sharedOptions = merge(getDefaultOptions(), {
   size: 24,
   lineHeight: 1.2,
   textAlign: 'center',
@@ -27,25 +28,25 @@ glob(path.join(fontsDir, '*', '*.{ttf,otf}'), function(error, files) {
     throw error;
   } else {
     files.forEach(function(fontFile, index) {
-      var fontName = path
+      const fontName = path
         .basename(fontFile)
         .replace(/\.(ttf|otf)/i, '')
         .replace(/[\s]+/i, '-')
         .toLowerCase();
 
-      var outputFile = fontName + '.svg';
-      var outputFilePath = path.resolve(outputDir, outputFile);
+      const outputFile = fontName + '.svg';
+      const outputFilePath = path.resolve(outputDir, outputFile);
 
-      var fonts = {};
+      const fonts = {};
       fonts[fontName] = fontFile;
 
-      var options = merge(sharedOptions, {
+      const options = merge(sharedOptions, {
         fonts: fonts,
         font: fontName,
         sharedGlyphStore: 's' + index,
       });
 
-      renderSVG(options, function(error, svgString) {
+      renderSVG(options, shortid.generate(), function(error, svgString) {
         if (error) {
           console.log('Failed creating: "' + outputFile + '"');
           process.exit(1);

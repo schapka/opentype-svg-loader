@@ -1,12 +1,12 @@
 'use strict';
 
-var path = require('path');
+const path = require('path');
 
-var glob = require('glob');
-var webpack = require('webpack');
-var merge = require('webpack-merge');
+const glob = require('glob');
+const webpack = require('webpack');
+const merge = require('webpack-merge');
 
-var examplesDir = path.resolve(__dirname);
+const examplesDir = path.resolve(__dirname);
 
 var compilerCount = 0;
 var successCount = 0;
@@ -28,7 +28,7 @@ function handleCompilerComplete(error, stats) {
   }
 }
 
-var sharedConfig = {
+const sharedConfig = {
   resolveLoader: {
     alias: {
       'opentype-svg-loader': path.resolve(__dirname, '..'),
@@ -43,11 +43,11 @@ glob(path.join(examplesDir, '*', 'webpack.config.js'), function(error, files) {
     files.forEach(function(configFile) {
       compilerCount++;
 
-      var config = merge({}, require(configFile), sharedConfig, {
+      const config = merge({}, require(configFile), sharedConfig, {
         name: path.basename(path.dirname(configFile)),
       });
 
-      var compiler = webpack(config);
+      const compiler = webpack(config);
       compiler.run(handleCompilerComplete.bind(compiler));
     });
   }
