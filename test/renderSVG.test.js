@@ -8,6 +8,6 @@ describe('renderSVG', function() {
   });
 
   test('should expect two arguments', function() {
-    expect(renderSVG.length).toBe(2);
+    expect(renderSVG.length).toBe(3);
   });
 });
