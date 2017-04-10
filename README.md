@@ -31,7 +31,12 @@ module: {
           loader: 'opentype-svg-loader',
           options: {
             fonts: {
-              YellowtailRegular: path.resolve( __dirname, 'fonts', 'Yellowtail', 'Yellowtail-Regular.ttf' )
+              YellowtailRegular: path.resolve(
+                __dirname,
+                'fonts',
+                'Yellowtail',
+                'Yellowtail-Regular.ttf'
+              )
             }
           }
         }
@@ -53,8 +58,8 @@ module: {
 `entry.js`
 
 ```javascript
-var headlineSVGString = require( './headline.ot.json' );
-var wrapperEl = document.getElementById( 'mount' );
+var headlineSVGString = require('./headline.ot.json');
+var wrapperEl = document.getElementById('mount');
 wrapperEl.innerHTML = headlineSVGString;
 ```
 
